@@ -1,8 +1,8 @@
 {
     "position": "left",
     "margin": "5, 5",
-    "modules-left": ["sway/mode","pulseaudio","cpu", "tray",],
-    "modules-center": ["custom/browser","custom/terminal","sway/workspaces","custom/files","custom/launcher",],
+    "modules-left": ["custom/launcher","sway/mode","pulseaudio","cpu", "tray",],
+    "modules-center": ["sway/workspaces",],
     "modules-right": ["memory","battery", "idle_inhibitor", "clock",],
 
 // modules
@@ -15,14 +15,14 @@
     	"all-outputs": true,
 	"format": "{icon}",
         "format-icons": {
-            "1": "α",
-            "2": "β",
-            "3": "γ",
-            "4": "δ",
-            "5": "ε",
-            "6": "ζ",
-            "7": "η",
-            "8": "θ",
+            "1": "󰈹",
+            "2": "",
+            "3": "",
+            "4": "󰓓",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
         }
     },
 
@@ -120,7 +120,7 @@
     },
 
     "custom/launcher": {
-        "format":"",
+        "format":"",
         "on-click": "exec wofi -c ~/.config/wofi/config -I",
         "tooltip": false,
     },

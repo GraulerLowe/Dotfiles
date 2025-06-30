@@ -1,4 +1,4 @@
-;; Desactivar la barra de menú
+;;; Desactivar la barra de menú
 (menu-bar-mode -1)
 
 ;; Desactivar la barra de herramientas
@@ -104,24 +104,17 @@
 (use-package all-the-icons
   :ensure t)
 
-;; Instalar y configurar neotree
-(use-package neotree
-  :ensure t
-  :config
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)) ; Usa iconos si está en modo gráfico
-  (global-set-key [f8] 'neotree-toggle)) ; Asigna la tecla F8 para activar/desactivar neotree 
-
 (set-frame-font "Noto Sans Mono-12" nil t)
 
 
 ;; Atajo de teclado para abrir una terminal
-(global-set-key (kbd "C-c t") 'ansi-term)
+(global-set-key (kbd "C-c t") 'vterm)
 
 ;;Dashboard
 (require 'dashboard)
 (dashboard-setup-startup-hook)
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
-(setq dashboard-startup-banner "/home/graulerlowe/Imágenes/Images/fondo/ramona_writting.png")
+(setq dashboard-startup-banner "/home/grauler/Imágenes/Solani.jpeg")
 
 
 
@@ -136,7 +129,8 @@
                    catppuccin-theme company dashboard doom-modeline
                    doom-themes exotica-theme haskell-emacs magit
                    material-theme night-owl-theme nyan-mode
-                   org-dashboard racket-mode)))
+                   org-dashboard racket-mode rust-mode treemacs
+                   treemacs-all-the-icons treemacs-nerd-icons vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
