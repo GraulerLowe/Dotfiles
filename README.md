@@ -1,5 +1,5 @@
 # Arch_linux
-Este repopsitorio contiene mi configuracion de Arch linux y Nobara linux.
+Este repositorio contiene mi configuracion de Arch linux y Nobara linux.
 ## Nobara Linux
 La configuracion incluye el gestor de ventanas sway pero esta misma configuracion puede ser instalada en arch linux.
 ## Arch Linux
