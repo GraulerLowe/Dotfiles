@@ -17,12 +17,13 @@ set $right l
 set $term kitty
 # Your preferred application launcher
 set $menu wofi --show drun --allow-images
+set $home $HOME
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/grauler/Imágenes/hi.jpg fill
-#
+output * bg $home/.config/sway/Images/alette.webp fill
+#1
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
