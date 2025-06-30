@@ -14,12 +14,27 @@ install_dependencies() {
     fi
 }
 
+#!/bin/bash
+
+user="$HOME"
+
 copy_directory() {
     echo -e "[*] Copiando los archivos en .config"
-    [ -d "$user/.config/sway" ] && cp -r "$user/Arch_linux/sway/*" "$user/.config/sway"
-    [ -d "$user/.config/waybar" ] && cp -r "$user/Arch_linux/waybar/*" "$user/.config/waybar"
-    [ -d "$user/.config/wofi" ] && cp -r "$user/Arch_linux/wofi/*" "$user/.config/wofi"
-    [ -d "$user/.config/kitty" ] && cp -r "$user/Arch_linux/kitty/*" "$user/.config/kitty"
+
+    declare -a dirs=("sway" "waybar" "wofi" "kitty")
+
+    for dir in "${dirs[@]}"; do
+        src="$user/Arch_linux/$dir"
+        dst="$user/.config/$dir"
+
+        if [ -d "$src" ]; then
+            mkdir -p "$dst"
+            cp -r "$src/." "$dst"
+            echo "[*] Copiados archivos de $src a $dst"
+        else
+            echo "[!] Carpeta de origen $src no existe, omitiendo."
+        fi
+    done
 }
 
 while true; do
