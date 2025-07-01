@@ -1,0 +1,112 @@
+{
+  "layer": "top",
+  "height": 30, // Waybar height (to be removed for auto height)
+  "spacing": 0, // Gaps between modules (4px)
+  "modules-left": ["hyprland/window"],
+  "modules-center": [
+    "mpris",
+    "pulseaudio",
+    "hyprland/language",
+    "hyprland/workspaces",
+    "clock",
+    "battery",
+  ],
+  "modules-right": ["tray", "bluetooth", "network", "custom/notification"],
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ar": "AR",
+    "keyboard-name": "at-translated-set-2-keyboard",
+  },
+  "hyprland/window": {
+    "format": {},
+    "max-length": 30,
+    "rewrite": {
+      "": "Desktop",
+    },
+  },
+  "mpris": {
+    "format": "{player_icon}",
+    "format-paused": "{status_icon}",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+    },
+    "status-icons": {
+      "paused": "⏸",
+    },
+    // "ignored-players": ["firefox"]
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+  },
+  "clock": {
+    "format": "{:%I:%M:%S %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+    "interval": 1,
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "<span font='11'>{icon}</span> {capacity}%",
+    "format-full": "<span font='11'>{icon}</span> {capacity}%",
+    "format-charging": "<span font='11'>󰂄</span> {capacity}%",
+    "format-plugged": "<span font='11'>󰂄</span> {capacity}%",
+    "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰂂"],
+  },
+  "network": {
+    "format-wifi": "<span font='11'></span> ",
+    "format-ethernet": "<span font='11'>󰈀</span>",
+    "format-disconnected": "<span font='11'>󰤭</span>",
+    "format-alt": "{bandwidthDownBytes}",
+    "interval": 1,
+  },
+  "pulseaudio": {
+    "format": "<span font='11'>{icon}</span> {volume}%",
+    "format-muted": "<span font='11'>󰝟</span>",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+  },
+  "bluetooth": {
+    "format": "<span font='11'>󰂯</span>",
+    "format-disabled": "<span font='11'>󰂲</span>",
+    "format-connected": "<span font='11'>󰂱</span>",
+    "on-click": "blueberry",
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+}

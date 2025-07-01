@@ -5,7 +5,9 @@ user="$HOME"
 install_dependencies() {
     if [ -x "$(command -v pacman)" ]; then
         echo -e "[*] Instalando paquetes usando pacman."
-        sudo pacman --noconfirm --needed -S hyprland rofi nemo kitty github-cli waybar emacs libwebp
+        sudo pacman --noconfirm --needed -S hyprland rofi nemo kitty github-cli waybar emacs webp-pixbuf-loader hyprpaper brightnessctl pactl
+        echo "[*] Instalando temas de Rofi..."
+        rofi_theme_selector
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
         sudo dnf install -y hyprland rofi nemo kitty gh waybar emacs 
@@ -17,10 +19,10 @@ install_dependencies() {
 copy_directory() {
     echo -e "[*] Copiando los archivos en .config"
 
-    declare -a dirs=("hypr" "waybar" "wofi" "kitty")
+    declare -a dirs=("waybar" "kitty" "hypr")
 
     for dir in "${dirs[@]}"; do
-        src="$user/Arch_linux/$dir"
+        src="$user/Arch_linux/Hyprland/$dir"
         dst="$user/.config/$dir"
 
         if [ -d "$src" ]; then
@@ -31,6 +33,13 @@ copy_directory() {
             echo "[!] Carpeta de origen $src no existe, omitiendo."
         fi
     done
+}
+
+rofi_theme_selector(){
+    git clone https://github.com/lr-tech/rofi-themes-collection.git
+    cd rofi-themes-collection
+    mkdir -p ~/.local/share/rofi/themes/
+    cp themes/* ~/.local/share/rofi/themes/
 }
 
 while true; do
