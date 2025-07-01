@@ -5,7 +5,7 @@ user="$HOME"
 install_dependencies() {
     if [ -x "$(command -v pacman)" ]; then
         echo -e "[*] Instalando paquetes usando pacman."
-        sudo pacman --noconfirm --needed -S sway wofi nemo kitty github-cli waybar emacs lxqt-policykit
+        sudo pacman --noconfirm --needed -S sway wofi nemo kitty github-cli waybar emacs lxqt-policykit libwebp
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
         sudo dnf install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs 
@@ -13,10 +13,6 @@ install_dependencies() {
         echo -e "[*] FALLO LA INSTALACION DEL PAQUETES: No se encontro el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
 }
-
-#!/bin/bash
-
-user="$HOME"
 
 copy_directory() {
     echo -e "[*] Copiando los archivos en .config"
