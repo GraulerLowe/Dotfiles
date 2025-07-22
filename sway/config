@@ -144,10 +144,10 @@ output * bg $home/Imágenes/alette.webp fill
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+x exec /home/grauler/.config/sway/powermenu.sh
+    bindsym $mod+x exec $home/.config/sway/powermenu.sh
     bindsym $mod+w exec emacs
-    bindsym $mod+e exec nautilus
-    bindsym $mod+z exec /home/grauler/.config/sway/notes.sh
+    bindsym $mod+e exec nemo
+    bindsym $mod+z exec $home/.config/sway/notes.sh
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
