@@ -5,10 +5,10 @@ user="$HOME"
 install_dependencies() {
     if [ -x "$(command -v pacman)" ]; then
         echo -e "[*] Instalando paquetes usando pacman."
-        sudo pacman --noconfirm --needed -S sway wofi nemo kitty github-cli waybar emacs lxqt-policykit libwebp mako grim
+        sudo pacman --noconfirm --needed -S sway wofi nemo kitty github-cli waybar emacs lxqt-policykit libwebp mako grim swaylock
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
-        sudo dnf install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs mako grim
+        sudo dnf install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs mako grim swaylock
     else
         echo -e "[*] FALLO LA INSTALACION DEL PAQUETES: No se encontro el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
@@ -17,7 +17,7 @@ install_dependencies() {
 copy_directory() {
     echo -e "[*] Copiando los archivos en .config"
 
-    declare -a dirs=("sway" "waybar" "wofi" "kitty")
+    declare -a dirs=("sway" "waybar" "wofi" "kitty" "swaylock")
 
     for dir in "${dirs[@]}"; do
         src="$user/Arch_linux/$dir"
