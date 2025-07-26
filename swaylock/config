@@ -1,0 +1,6 @@
+image=~/.config/sway/Images/guts.png
+indicator-radius=150
+indicator-thickness=20
+inside-color=1f1f28
+ring-color=1f1f28
+text-color=dcd7ba
