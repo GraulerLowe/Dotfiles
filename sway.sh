@@ -5,10 +5,10 @@ user="$HOME"
 install_dependencies() {
     if [ -x "$(command -v pacman)" ]; then
         echo -e "[*] Instalando paquetes usando pacman."
-        sudo pacman --noconfirm --needed -S sway wofi nemo kitty github-cli waybar emacs lxqt-policykit libwebp mako grim swaylock
+        sudo pacman --noconfirm --needed -S sway wofi nemo kitty github-cli waybar emacs lxqt-policykit libwebp mako grim swaylock curl
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
-        sudo dnf install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs mako grim swaylock
+        sudo dnf install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs mako grim swaylock curl
     else
         echo -e "[*] FALLO LA INSTALACION DEL PAQUETES: No se encontro el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
@@ -33,6 +33,20 @@ copy_directory() {
     done
 }
 
+nerd_fonts_manuall (){
+    echo -e "[*] Instalando fuentes de nerd fonts de forma manual"
+    curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip
+    curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip
+    mkdir -p ~/.local/share/fonts
+    unzip FiraCode.zip -d ~/.local/share/fonts
+    unzip NerdFontsSymbolsOnly.zip -d ~/.local/share/fonts
+    echo "[*] Actualizando caché de fuentes..."
+    fc-cache -fv
+    rm FiraCode.zip
+    rm NerdFontsSymbolsOnly.zip
+    echo "[*] Se han instalado las fuentes de texto correspodientes"
+}
+
 while true; do
     clear
     echo -e "Script para la instalacion del gestor de ventanas Sway"
@@ -44,7 +58,7 @@ while true; do
      
     case $x in
         [1]* ) install_dependencies; exit;;
-        [2]* ) copy_directory; exit;;
+        [2]* ) copy_directory; nerd_fonts_manuall; exit;;
         [3]* ) exit;;
     esac
 done
