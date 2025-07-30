@@ -9,6 +9,9 @@ install_dependencies() {
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
         sudo dnf install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs mako grim swaylock curl
+    elif [ -x "$(command -v apt)" ]; then 
+        echo -e "[*] Instalando paquetes usando apt"
+        sudo apt update && sudo apt install -y sway wofi nemo kitty gh waybar lxqt-policykit emacs mako grim swaylock curl
     else
         echo -e "[*] FALLO LA INSTALACION DEL PAQUETES: No se encontro el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
@@ -44,7 +47,7 @@ nerd_fonts_manuall (){
     fc-cache -fv
     rm FiraCode.zip
     rm NerdFontsSymbolsOnly.zip
-    echo "[*] Se han instalado las fuentes de texto correspodientes"
+    echo "[*] Se han instalado las fuentes de texto correspodientes. Si es necesario reinicia el equipo"
 }
 
 while true; do
