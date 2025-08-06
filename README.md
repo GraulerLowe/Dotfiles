@@ -5,8 +5,8 @@ Solo debes ejecutar el archivo sway.sh o hyprland.sh dependiendo el gestor de ve
 ## Nobara Linux
 La configuracion incluye el gestor de ventanas sway pero esta misma configuracion puede ser instalada en distribuciones con el gestor de paquetes pacman y apt.
 ![Nobara_solanin](https://github.com/user-attachments/assets/96f39941-59b1-42a8-850f-1b92f59e3136)
-## NixOS
-La configuracion incluye el gestor de ventanas hyprland y por ahora unicamente se podria instalar en este sistema.
+## Arch Linux
+La configuracion incluye el gestor de ventanas river (wayland) cuya instalacion funciona en distribuciones con el gestor de aquetes pacman y dnf.
 <img width="1366" height="768" alt="Nixos" src="https://github.com/user-attachments/assets/bdef3de0-60ed-49bd-9336-95720207f016" />
 
 
