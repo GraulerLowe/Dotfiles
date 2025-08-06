@@ -7,5 +7,7 @@ La configuracion incluye el gestor de ventanas sway pero esta misma configuracio
 ![Nobara_solanin](https://github.com/user-attachments/assets/96f39941-59b1-42a8-850f-1b92f59e3136)
 ## NixOS
 La configuracion incluye el gestor de ventanas hyprland y por ahora unicamente se podria instalar en este sistema.
-![Arch_hyprland](https://github.com/user-attachments/assets/db567e04-1268-4aec-84e2-c0e2fdf0701e)
+<img width="1366" height="768" alt="Nixos" src="https://github.com/user-attachments/assets/bdef3de0-60ed-49bd-9336-95720207f016" />
+
+
 
