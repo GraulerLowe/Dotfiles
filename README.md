@@ -7,7 +7,7 @@ La configuracion incluye el gestor de ventanas sway pero esta misma configuracio
 ![Nobara_solanin](https://github.com/user-attachments/assets/96f39941-59b1-42a8-850f-1b92f59e3136)
 ## Arch Linux
 La configuracion incluye el gestor de ventanas river (wayland) cuya instalacion funciona en distribuciones con el gestor de aquetes pacman y dnf.
-<img width="1366" height="768" alt="Nixos" src="https://github.com/user-attachments/assets/bdef3de0-60ed-49bd-9336-95720207f016" />
+<img width="1366" height="768" alt="20250807_00h29m42s_grim" src="https://github.com/user-attachments/assets/32be1625-1f6a-4568-a145-60573291a776" />
 
 
 
