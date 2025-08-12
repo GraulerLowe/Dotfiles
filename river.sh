@@ -80,7 +80,7 @@ while true; do
     echo -e "[*] Elige la opcion:"
     echo -e "1. Instalar los paquetes."
     echo -e "2. Copiar los archivos."
-    echo -e "3. Instalar configuracion de emacs (solo si usas este editor)."
+    echo -e "3. Instalar configuracion de emacs (1/2)."
     echo -e "4. Exit."
     read -p "[*] Your choice: " x
      
