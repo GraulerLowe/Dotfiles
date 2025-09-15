@@ -5,12 +5,12 @@ user="$HOME"
 install_dependencies() {
     if [ -x "$(command -v pacman)" ]; then
         echo -e "[*] Instalando paquetes usando pacman."
-        sudo pacman --noconfirm --needed -S hyprland rofi nemo kitty github-cli waybar emacs webp-pixbuf-loader hyprpaper brightnessctl pactl
+        sudo pacman --noconfirm --needed -S hyprland wofi nemo kitty github-cli waybar mako webp-pixbuf-loader swaybg brightnessctl pactl
         echo "[*] Instalando temas de Rofi..."
         rofi_theme_selector
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
-        sudo dnf install -y hyprland rofi nemo kitty gh waybar emacs 
+        sudo dnf install -y hyprland wofi nemo kitty gh waybar mako
     else
         echo -e "[*] FALLO LA INSTALACION DEL PAQUETES: No se encontro el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
