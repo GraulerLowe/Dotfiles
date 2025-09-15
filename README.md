@@ -1,9 +1,9 @@
 # Dots
 Este repositorio contiene mi configuracion de Arch linux y Nobara linux.
 ### Instalación
-Solo debes ejecutar el archivo sway.sh o river.sh dependiendo el gestor de ventanas de tu preferencia. En caso de fallar algun scrip puedes copiar cada carpeta de forma manual.
+Solo debes ejecutar el archivo hyprland.sh o river.sh dependiendo el gestor de ventanas de tu preferencia. En caso de fallar algun scrip puedes copiar cada carpeta de forma manual.
 ## Nobara Linux
-La configuracion incluye el gestor de ventanas sway pero esta misma configuracion puede ser instalada en distribuciones con el gestor de paquetes pacman y apt.
+La configuracion incluye el gestor de ventanas hyprland pero esta misma configuracion puede ser instalada en distribuciones con el gestor de paquetes pacman y apt.
 ![Nobara_solanin](https://github.com/user-attachments/assets/96f39941-59b1-42a8-850f-1b92f59e3136)
 <img width="1366" height="768" alt="Nobara_linux_sway" src="https://github.com/user-attachments/assets/5cd4827d-fd49-4f1c-8bab-4b91a57a8743" />
 
