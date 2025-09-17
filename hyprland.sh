@@ -10,10 +10,24 @@ install_dependencies() {
         rofi_theme_selector
     elif [ -x "$(command -v dnf)" ]; then 
         echo -e "[*] Instalando paquetes usando dnf"
-        sudo dnf install -y hyprland wofi nemo kitty gh waybar mako
+        sudo dnf install -y hyprland wofi nemo kitty gh waybar mako swaybg brightnessctl 
     else
         echo -e "[*] FALLO LA INSTALACION DEL PAQUETES: No se encontro el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
+}
+
+nerd_fonts_manuall (){
+    echo -e "[*] Instalando fuentes de nerd fonts de forma manual"
+    curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip
+    curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip
+    mkdir -p ~/.local/share/fonts
+    unzip FiraCode.zip -d ~/.local/share/fonts
+    unzip NerdFontsSymbolsOnly.zip -d ~/.local/share/fonts
+    echo "[*] Actualizando caché de fuentes..."
+    fc-cache -fv
+    rm FiraCode.zip
+    rm NerdFontsSymbolsOnly.zip
+    echo "[*] Se han instalado las fuentes de texto correspodientes. Si es necesario reinicia el equipo"
 }
 
 copy_directory() {
@@ -22,7 +36,7 @@ copy_directory() {
     declare -a dirs=("waybar" "kitty" "hypr" "wofi")
 
     for dir in "${dirs[@]}"; do
-        src="$user/Arch_linux/Hyprland/$dir"
+        src="$user/Arch_linux/hyprland/$dir"
         dst="$user/.config/$dir"
 
         if [ -d "$src" ]; then
@@ -46,7 +60,7 @@ while true; do
     read -p "[*] Your choice: " x
      
     case $x in
-        [1]* ) install_dependencies; exit;;
+        [1]* ) install_dependencies; nerd_fonts_manuall; exit;;
         [2]* ) copy_directory; exit;;
         [3]* ) exit;;
     esac
