@@ -23,6 +23,7 @@ window#waybar {
 #pulseaudio,
 #battery,
 #memory,
+#disk,
 #cpu,
 #backlight,
 #custom-clock {

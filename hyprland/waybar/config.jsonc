@@ -3,7 +3,7 @@
     "position": "top",
     "height": 33,
     "spacing": 0,
-    "modules-left": ["hyprland/workspaces","hyprland/mode"],
+    "modules-left": ["hyprland/workspaces","disk"],
     "modules-center": ["custom/clock"],
     "modules-right": ["memory", "cpu", "pulseaudio", "battery", "backlight", "tray"],
 
@@ -61,7 +61,18 @@
   "tooltip-format": "{used:0.1f}G"
 },
 
+"disk": {
+    "interval": 30,
+    "format": "Only {percentage_free}% remaining on {path}",
+    "path": "/"
+},
 
+"disk": {
+	"interval": 30,
+	"format": "<span color='#252525'> / </span>   {specific_free:0.2f} GB / {specific_total:0.2f} GB <span color='#252525'>/</span>",
+	"unit": "GB"
+	// 0.25 GB out of 2000.00 GB available. Alternatively 241.3MiB out of 1.9TiB available.
+},
 
     "cpu": {
         "interval": 10,
