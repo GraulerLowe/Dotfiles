@@ -1,0 +1,1 @@
+("~/Documentos/Chat_Room/" "~/Documentos/Arch_linux/" "~/.config/swaylock/")
