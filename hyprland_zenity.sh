@@ -48,7 +48,7 @@ copy_directory() {
     declare -a dirs=("waybar" "kitty" "hypr" "wofi")
 
     for dir in "${dirs[@]}"; do
-        src="$user/Arch_linux/hyprland/$dir"
+        src="$user/Dotfiles/hyprland/$dir"
         dst="$user/.config/$dir"
 
         if [ -d "$src" ]; then
