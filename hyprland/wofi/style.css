@@ -1,39 +1,102 @@
+@define-color primary #09BBC8;
+@define-color secondary #696969;
+@define-color background #1C1B1F;
+@define-color surface #212121;
+@define-color on-primary #FFF3DA;
+@define-color on-secondary #CAC4D0;
+@define-color on-background #E6E1E5;
+@define-color on-surface #F4EFF4;
+
+* {
+    font-family: "Iosevka Nerd Font", monospace;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+*:selected {
+    color: @on-primary;
+    background-color: @primary;
+}
+
+/* Window */
 window {
-margin: 0px;
-border: 1px solid #4900BF;
-background-color: #090017;
+    margin: 0px;
+    padding: 10px;
+    border: 3px solid @on-primary;
+    border-radius: 7px;
+    background-color: @background;
+    animation: slideIn 0.5s ease-in-out both;
 }
 
-#input {
-margin: 5px;
-border: none;
-color: #d8dee9;
-background-color: #090017;
+/* Slide In */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
+/* Inner Box */
 #inner-box {
-margin: 5px;
-border: none;
-background-color: #090017;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @surface;
+    animation: fadeIn 0.5s ease-in-out both;
 }
 
+/* Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Outer Box */
 #outer-box {
-margin: 5px;
-border: none;
-background-color: #130130;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @surface;
 }
 
+/* Scroll */
 #scroll {
-margin: 0px;
-border: none;
+    margin: 0px;
+    padding: 10px;
+    border: none;
 }
 
+/* Input */
+#input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @on-background;
+    background-color: @secondary;
+    animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Text */
 #text {
-margin: 5px;
-border: none;
-color: #d8dee9;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @on-surface;
+    animation: fadeIn 0.5s ease-in-out both;
 }
 
+/* Selected Entry */
 #entry:selected {
-background-color: #160138;
+    background-color: @primary;
+    border-radius: 5px;
+}
+
+#entry:selected #text {
+    color: #06484D;
 }
