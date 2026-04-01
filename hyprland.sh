@@ -22,6 +22,40 @@ install_dependencies() {
             thunar swaylock playerctl pipewire pipewire-pulseaudio wireplumber \
             xdg-desktop-portal xdg-desktop-portal-hyprland lxqt-policykit \
             grim emacs
+    elif [-x "$(command -v emerge)"]; then
+        echo -e "[*] Instalando paquetes usando emerge. Ten en cuenta que esto puede tardar horas dependiendo de la compilacion de cada paquete."
+        sudo eselect repository enable guru
+        sudo emerge --sync
+
+        echo "Configurando USE flags"
+        touch /etc/portage/package.use/hyprland
+        cat > /etc/portage/package.use/hyprland << EOF
+        gui-libs/hyprland X wayland aqua libinput
+        dev-libs/wayland X
+        media-libs/mesa wayland
+        gui-libs/wlroots X wayland
+        EOF
+
+        echo "Configurando keywords (~amd64)"
+        mkdir -p /etc/portage/package.accept_keywords
+        touch /etc/portage/package.accept_keywords/hyprland
+        cat > /etc/portage/package.accept_keywords/hyprland << EOF
+        gui-libs/hyprland ~amd64
+        dev-libs/wayland ~amd64
+        gui-libs/wlroots ~amd64
+        EOF
+
+        echo "Instalando dependencias"
+        sudo emerge --ask --verbose \
+               gui-libs/hyprland \
+               gui-apps/hyprpaper \
+               gui-apps/hyprlock \
+               gui-apps/hypridle \
+               x11-terms/kitty \
+               app-misc/waybar \
+               gui-apps/mako \
+               gui-libs/hyprtoolkit  \
+               media-fonts/nerd-fonts
     else
         echo -e "[*] FALLO LA INSTALACION DE PAQUETES: No se encontró el gestor de paquetes. Debes instalar los paquetes de forma manual." >&2
     fi
@@ -51,7 +85,7 @@ nerd_fonts_manuall (){
 copy_directory() {
     echo -e "[*] Copiando los archivos en .config"
 
-    declare -a dirs=("waybar" "kitty" "hypr" "wofi")
+    declare -a dirs=("waybar" "kitty" "hypr" "wofi" "hyprlock")
 
     for dir in "${dirs[@]}"; do
         src="$user/Dotfiles/hyprland/$dir"
