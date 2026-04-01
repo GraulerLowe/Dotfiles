@@ -8,7 +8,7 @@ Si lo prefieres, ejecuta el archivo hyprland_zenity.sh el cual permite una insta
 sudo emerge -q gnome-extra/zenity
 ```
 ### Aviso
-LA versión actual del instalador de gentoo (no integrado a zenity) funciona correctamente y puedes instalarla de forma adecuada, solo ten en cuenta que se esta suponiendo que eres un usuario de gentoo completo, lo que implica que te gusta tener tu sistema solo con lo que ocupas. Este script modifica USE flags e instalar cosas que puede que no uses o incluso no sean de tu agrado. Aqui las dependencias a instalarse en gentoo:
+La versión actual del instalador de gentoo (no integrado a zenity) funciona correctamente y puedes instalarla de forma adecuada, solo ten en cuenta que se esta suponiendo que eres un usuario de gentoo completo, lo que implica que te gusta tener tu sistema solo con lo que ocupas. Este script modifica USE flags e instalar cosas que puede que no uses o incluso no sean de tu agrado. Aqui las dependencias a instalarse en gentoo:
 ```
  gui-libs/hyprland \                                                                                                               
  gui-apps/hyprpaper \                                                                                                              
