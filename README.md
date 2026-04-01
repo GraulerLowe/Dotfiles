@@ -20,7 +20,7 @@ La versión actual del instalador de gentoo (no integrado a zenity) funciona cor
  gui-libs/hyprtoolkit  \                                                                                                           
  media-fonts/nerd-fonts  
 ```
-Si alguna no es de tu agrado puedes remplazarla o simplemnte usa las carpetas para copiarlas de forma manual.
+Si alguna no es de tu agrado puedes remplazarla o simplemente usa las carpetas para copiarlas de forma manual.
 ## Hyprland
 La configuracion incluye el gestor de ventanas hyprland configura la barra de estado waybar junto a las aplicaciones que yo ocupo para mi trabajo diario como 
 desarrollador y programador. Si deseas no usar estas aplicaciones deberas cambiarlas de forma manual.
