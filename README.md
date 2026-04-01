@@ -7,6 +7,20 @@ Si lo prefieres, ejecuta el archivo hyprland_zenity.sh el cual permite una insta
 ```
 sudo emerge -q gnome-extra/zenity
 ```
+### Aviso
+LA versión actual del instalador de gentoo (no integrado a zenity) funciona correctamente y puedes instalarla de forma adecuada, solo ten en cuenta que se esta suponiendo que eres un usuario de gentoo completo, lo que implica que te gusta tener tu sistema solo con lo que ocupas. Este script modifica USE flags e instalar cosas que puede que no uses o incluso no sean de tu agrado. Aqui las dependencias a instalarse en gentoo:
+```
+ gui-libs/hyprland \                                                                                                               
+ gui-apps/hyprpaper \                                                                                                              
+ gui-apps/hyprlock \                                                                                                               
+ gui-apps/hypridle \                                                                                                               
+ x11-terms/kitty \                                                                                                                 
+ app-misc/waybar \                                                                                                                 
+ gui-apps/mako \                                                                                                                   
+ gui-libs/hyprtoolkit  \                                                                                                           
+ media-fonts/nerd-fonts  
+```
+Si alguna no es de tu agrado puedes remplazarla o simplemnte usa las carpetas para copiarlas de forma manual.
 ## Hyprland
 La configuracion incluye el gestor de ventanas hyprland configura la barra de estado waybar junto a las aplicaciones que yo ocupo para mi trabajo diario como 
 desarrollador y programador. Si deseas no usar estas aplicaciones deberas cambiarlas de forma manual.
